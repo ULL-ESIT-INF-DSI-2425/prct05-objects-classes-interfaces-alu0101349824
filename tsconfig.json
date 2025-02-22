@@ -4,6 +4,7 @@
     "./dist",
     "./test"
   ],
+  "include": ["./src/**/*.ts"],
   "compilerOptions": {
     "target": "ES2024",
     "module": "commonjs",

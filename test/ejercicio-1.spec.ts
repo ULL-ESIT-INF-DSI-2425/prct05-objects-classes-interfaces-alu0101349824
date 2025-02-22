@@ -180,6 +180,7 @@ describe("Pokedex - Filtros adicionales y mostrarPokemon", () => {
     const pokedex = new Pokedex();
     const p = new Pokemon("Test", 10, 1, TipoPokemon.Agua, 50, 50, 50, 100);
     pokedex.agregarPokemon(p);
+    // Con vi spy, se puede verificar si console.log fue llamado con los datos del Pokémon. De esta forma se verifica que la función mostrarPokemon imprime la información de los Pokémon.
     const spy = vi.spyOn(console, "log");
     pokedex.mostrarPokemon();
     expect(spy).toHaveBeenCalledWith(

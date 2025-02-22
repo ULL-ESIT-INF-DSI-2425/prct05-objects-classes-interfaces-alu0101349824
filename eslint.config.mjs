@@ -14,7 +14,7 @@ export default [
   eslintConfigPrettier,
   {
     plugins: {
-      tsdoc,
+      tsdoc
     },
   },
   {
