@@ -42,6 +42,7 @@ export default [
       "tsconfig.json",
       "typedoc.json",
       ".vscode/**",
+      ".github/workflows/**",
     ],
   },
 ];
