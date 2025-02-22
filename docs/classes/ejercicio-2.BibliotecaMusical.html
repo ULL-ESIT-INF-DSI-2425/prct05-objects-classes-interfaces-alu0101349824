@@ -1,37 +1,1518 @@
-<!DOCTYPE html><html class="default" lang="en" data-base=".."><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>BibliotecaMusical | prct05-objects-classes-interfaces</title><meta name="description" content="Documentation for prct05-objects-classes-interfaces"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><link rel="stylesheet" href="../assets/custom.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><script async src="../assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search"><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">prct05-objects-classes-interfaces</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><ul class="tsd-breadcrumb"><li><a href="../modules.html">prct05-objects-classes-interfaces</a></li><li><a href="../modules/ejercicio-2.html">ejercicio-2</a></li><li><a href="ejercicio-2.BibliotecaMusical.html">BibliotecaMusical</a></li></ul><h1>Class BibliotecaMusical</h1></div><section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography"><a id="bibliotecamusical" class="tsd-anchor"></a><h2 class="tsd-anchor-link">BibliotecaMusical<a href="#bibliotecamusical" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Clase que representa una biblioteca musical.
-Permite almacenar artistas, buscar información y calcular datos de discos.</p>
-</div><div class="tsd-comment tsd-typography"><div class="tsd-tag-example"><h4 class="tsd-anchor-link"><a id="example" class="tsd-anchor"></a>Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-4">biblioteca</span><span class="hl-1"> = </span><span class="hl-3">new</span><span class="hl-1"> </span><span class="hl-5">BibliotecaMusical</span><span class="hl-1">();</span><br/><span class="hl-0">biblioteca</span><span class="hl-1">.</span><span class="hl-5">agregarArtista</span><span class="hl-1">(</span><span class="hl-0">artista</span><span class="hl-1">);</span><br/><span class="hl-0">biblioteca</span><span class="hl-1">.</span><span class="hl-5">mostrarBiblioteca</span><span class="hl-1">();</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-4">resultados</span><span class="hl-1"> = </span><span class="hl-0">biblioteca</span><span class="hl-1">.</span><span class="hl-5">buscarCancion</span><span class="hl-1">({ </span><span class="hl-0">nombre:</span><span class="hl-1"> </span><span class="hl-6">&quot;Canción1&quot;</span><span class="hl-1"> });</span>
+<!doctype html>
+<html class="default" lang="en" data-base="..">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <title>BibliotecaMusical | prct05-objects-classes-interfaces</title>
+    <meta
+      name="description"
+      content="Documentation for prct05-objects-classes-interfaces"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/highlight.css" />
+    <link rel="stylesheet" href="../assets/custom.css" />
+    <script defer src="../assets/main.js"></script>
+    <script async src="../assets/icons.js" id="tsd-icons-script"></script>
+    <script async src="../assets/search.js" id="tsd-search-script"></script>
+    <script async src="../assets/navigation.js" id="tsd-nav-script"></script>
+    <script
+      async
+      src="../assets/hierarchy.js"
+      id="tsd-hierarchy-script"
+    ></script>
+  </head>
+  <body>
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem("tsd-theme") || "os";
+      document.body.style.display = "none";
+      setTimeout(
+        () =>
+          app ? app.showPage() : document.body.style.removeProperty("display"),
+        500,
+      );
+    </script>
+    <header class="tsd-page-toolbar">
+      <div class="tsd-toolbar-contents container">
+        <div class="table-cell" id="tsd-search">
+          <div class="field">
+            <label
+              for="tsd-search-field"
+              class="tsd-widget tsd-toolbar-icon search no-caption"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+              >
+                <use href="../assets/icons.svg#icon-search"></use></svg></label
+            ><input type="text" id="tsd-search-field" aria-label="Search" />
+          </div>
+          <div class="field"><div id="tsd-toolbar-links"></div></div>
+          <ul class="results">
+            <li class="state loading">Preparing search index...</li>
+            <li class="state failure">The search index is not available</li>
+          </ul>
+          <a href="../index.html" class="title"
+            >prct05-objects-classes-interfaces</a
+          >
+        </div>
+        <div class="table-cell" id="tsd-widgets">
+          <a
+            href="#"
+            class="tsd-widget tsd-toolbar-icon menu no-caption"
+            data-toggle="menu"
+            aria-label="Menu"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <use href="../assets/icons.svg#icon-menu"></use></svg
+          ></a>
+        </div>
+      </div>
+    </header>
+    <div class="container container-main">
+      <div class="col-content">
+        <div class="tsd-page-title">
+          <ul class="tsd-breadcrumb">
+            <li>
+              <a href="../modules.html">prct05-objects-classes-interfaces</a>
+            </li>
+            <li><a href="../modules/ejercicio-2.html">ejercicio-2</a></li>
+            <li>
+              <a href="ejercicio-2.BibliotecaMusical.html">BibliotecaMusical</a>
+            </li>
+          </ul>
+          <h1>Class BibliotecaMusical</h1>
+        </div>
+        <section class="tsd-panel tsd-comment">
+          <div class="tsd-comment tsd-typography">
+            <a id="bibliotecamusical" class="tsd-anchor"></a>
+            <h2 class="tsd-anchor-link">
+              BibliotecaMusical<a
+                href="#bibliotecamusical"
+                aria-label="Permalink"
+                class="tsd-anchor-icon"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <use href="../assets/icons.svg#icon-anchor"></use></svg
+              ></a>
+            </h2>
+            <p>
+              Clase que representa una biblioteca musical. Permite almacenar
+              artistas, buscar información y calcular datos de discos.
+            </p>
+          </div>
+          <div class="tsd-comment tsd-typography">
+            <div class="tsd-tag-example">
+              <h4 class="tsd-anchor-link">
+                <a id="example" class="tsd-anchor"></a>Example<a
+                  href="#example"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h4>
+              <pre><code class="ts"><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-4">biblioteca</span><span class="hl-1"> = </span><span class="hl-3">new</span><span class="hl-1"> </span><span class="hl-5">BibliotecaMusical</span><span class="hl-1">();</span><br/><span class="hl-0">biblioteca</span><span class="hl-1">.</span><span class="hl-5">agregarArtista</span><span class="hl-1">(</span><span class="hl-0">artista</span><span class="hl-1">);</span><br/><span class="hl-0">biblioteca</span><span class="hl-1">.</span><span class="hl-5">mostrarBiblioteca</span><span class="hl-1">();</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-4">resultados</span><span class="hl-1"> = </span><span class="hl-0">biblioteca</span><span class="hl-1">.</span><span class="hl-5">buscarCancion</span><span class="hl-1">({ </span><span class="hl-0">nombre:</span><span class="hl-1"> </span><span class="hl-6">&quot;Canción1&quot;</span><span class="hl-1"> });</span>
 </code><button type="button">Copy</button></pre>
-
-</div></div></section><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L176">ejercicio-2.ts:176</a></li></ul></aside><section class="tsd-panel-group tsd-index-group"><section class="tsd-panel tsd-index-panel"><details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><h5 class="tsd-index-heading uppercase" role="button" aria-expanded="false" tabIndex="0"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronSmall"></use></svg> Index</h5></summary><div class="tsd-accordion-details"><section class="tsd-index-section"><h3 class="tsd-index-heading">Constructors</h3><div class="tsd-index-list"><a href="ejercicio-2.BibliotecaMusical.html#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a>
-</div></section><section class="tsd-index-section"><h3 class="tsd-index-heading">Methods</h3><div class="tsd-index-list"><a href="ejercicio-2.BibliotecaMusical.html#agregarartista" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>agregar<wbr/>Artista</span></a>
-<a href="ejercicio-2.BibliotecaMusical.html#buscarartista" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>buscar<wbr/>Artista</span></a>
-<a href="ejercicio-2.BibliotecaMusical.html#buscarcancion" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>buscar<wbr/>Cancion</span></a>
-<a href="ejercicio-2.BibliotecaMusical.html#buscardisco" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>buscar<wbr/>Disco</span></a>
-<a href="ejercicio-2.BibliotecaMusical.html#duraciontotal" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>duracion<wbr/>Total</span></a>
-<a href="ejercicio-2.BibliotecaMusical.html#mostrarbiblioteca" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mostrar<wbr/>Biblioteca</span></a>
-<a href="ejercicio-2.BibliotecaMusical.html#numerocanciones" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>numero<wbr/>Canciones</span></a>
-<a href="ejercicio-2.BibliotecaMusical.html#reproduccionestotales" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reproducciones<wbr/>Totales</span></a>
-</div></section></div></details></section></section><details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg> Constructors</h2></summary><section><section class="tsd-panel tsd-member"><a id="constructor" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link"><a id="constructorbibliotecamusical" class="tsd-anchor"></a><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">BibliotecaMusical</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="ejercicio-2.BibliotecaMusical.html" class="tsd-signature-type tsd-kind-class">BibliotecaMusical</a><a href="#constructorbibliotecamusical" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><h4 class="tsd-returns-title">Returns <a href="ejercicio-2.BibliotecaMusical.html" class="tsd-signature-type tsd-kind-class">BibliotecaMusical</a></h4><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L179">ejercicio-2.ts:179</a></li></ul></aside></div></li></ul></section></section></details><details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg> Methods</h2></summary><section><section class="tsd-panel tsd-member"><a id="agregarartista" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>agregar<wbr/>Artista</span><a href="#agregarartista" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link"><a id="agregarartista-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">agregarArtista</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">artista</span><span class="tsd-signature-symbol">:</span> <a href="ejercicio-2.Artista.html" class="tsd-signature-type tsd-kind-class">Artista</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#agregarartista-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><a id="agregarartista-2" class="tsd-anchor"></a><h2 class="tsd-anchor-link">agregarArtista<a href="#agregarartista-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Agrega un artista a la biblioteca.</p>
-</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">artista</span>: <a href="ejercicio-2.Artista.html" class="tsd-signature-type tsd-kind-class">Artista</a></span><div class="tsd-comment tsd-typography"><p>El artista a agregar.</p>
-</div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L188">ejercicio-2.ts:188</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member"><a id="buscarartista" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>buscar<wbr/>Artista</span><a href="#buscarartista" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link"><a id="buscarartista-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">buscarArtista</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">filtro</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ejercicio-2.IArtista.html" class="tsd-signature-type tsd-kind-interface">IArtista</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="ejercicio-2.Artista.html" class="tsd-signature-type tsd-kind-class">Artista</a><span class="tsd-signature-symbol">[]</span><a href="#buscarartista-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><a id="buscarartista-2" class="tsd-anchor"></a><h2 class="tsd-anchor-link">buscarArtista<a href="#buscarartista-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Busca artistas que cumplan con un filtro dado.</p>
-</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">filtro</span>: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ejercicio-2.IArtista.html" class="tsd-signature-type tsd-kind-interface">IArtista</a><span class="tsd-signature-symbol">&gt;</span></span><div class="tsd-comment tsd-typography"><p>Objeto parcial con propiedades de IArtista para filtrar.</p>
-</div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <a href="ejercicio-2.Artista.html" class="tsd-signature-type tsd-kind-class">Artista</a><span class="tsd-signature-symbol">[]</span></h4><p>Array de artistas que coinciden con el filtro.</p>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L223">ejercicio-2.ts:223</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member"><a id="buscarcancion" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>buscar<wbr/>Cancion</span><a href="#buscarcancion" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link"><a id="buscarcancion-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">buscarCancion</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">filtro</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ejercicio-2.ICancion.html" class="tsd-signature-type tsd-kind-interface">ICancion</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="ejercicio-2.Cancion.html" class="tsd-signature-type tsd-kind-class">Cancion</a><span class="tsd-signature-symbol">[]</span><a href="#buscarcancion-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><a id="buscarcancion-2" class="tsd-anchor"></a><h2 class="tsd-anchor-link">buscarCancion<a href="#buscarcancion-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Busca canciones que cumplan con un filtro dado en toda la biblioteca.</p>
-</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">filtro</span>: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ejercicio-2.ICancion.html" class="tsd-signature-type tsd-kind-interface">ICancion</a><span class="tsd-signature-symbol">&gt;</span></span><div class="tsd-comment tsd-typography"><p>Objeto parcial con propiedades de ICancion para filtrar.</p>
-</div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <a href="ejercicio-2.Cancion.html" class="tsd-signature-type tsd-kind-class">Cancion</a><span class="tsd-signature-symbol">[]</span></h4><p>Array de canciones que coinciden con el filtro.</p>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L296">ejercicio-2.ts:296</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member"><a id="buscardisco" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>buscar<wbr/>Disco</span><a href="#buscardisco" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link"><a id="buscardisco-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">buscarDisco</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">filtro</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ejercicio-2.IDisco.html" class="tsd-signature-type tsd-kind-interface">IDisco</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="ejercicio-2.Disco.html" class="tsd-signature-type tsd-kind-class">Disco</a><span class="tsd-signature-symbol">[]</span><a href="#buscardisco-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><a id="buscardisco-2" class="tsd-anchor"></a><h2 class="tsd-anchor-link">buscarDisco<a href="#buscardisco-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Busca discos que cumplan con un filtro dado en toda la biblioteca.</p>
-</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">filtro</span>: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ejercicio-2.IDisco.html" class="tsd-signature-type tsd-kind-interface">IDisco</a><span class="tsd-signature-symbol">&gt;</span></span><div class="tsd-comment tsd-typography"><p>Objeto parcial con propiedades de IDisco para filtrar.</p>
-</div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <a href="ejercicio-2.Disco.html" class="tsd-signature-type tsd-kind-class">Disco</a><span class="tsd-signature-symbol">[]</span></h4><p>Array de discos que coinciden con el filtro.</p>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L263">ejercicio-2.ts:263</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member"><a id="duraciontotal" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>duracion<wbr/>Total</span><a href="#duraciontotal" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link"><a id="duraciontotal-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">duracionTotal</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">disco</span><span class="tsd-signature-symbol">:</span> <a href="ejercicio-2.Disco.html" class="tsd-signature-type tsd-kind-class">Disco</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#duraciontotal-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><a id="duraciontotal-2" class="tsd-anchor"></a><h2 class="tsd-anchor-link">duracionTotal<a href="#duraciontotal-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Calcula la duración total de un disco, sumando la duración de cada canción.</p>
-</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">disco</span>: <a href="ejercicio-2.Disco.html" class="tsd-signature-type tsd-kind-class">Disco</a></span><div class="tsd-comment tsd-typography"><p>El disco del cual se calculará la duración.</p>
-</div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>Duración total en segundos.</p>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L362">ejercicio-2.ts:362</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member"><a id="mostrarbiblioteca" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>mostrar<wbr/>Biblioteca</span><a href="#mostrarbiblioteca" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link"><a id="mostrarbiblioteca-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">mostrarBiblioteca</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#mostrarbiblioteca-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><a id="mostrarbiblioteca-2" class="tsd-anchor"></a><h2 class="tsd-anchor-link">mostrarBiblioteca<a href="#mostrarbiblioteca-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Muestra la información de la biblioteca en formato de tabla.
-Utiliza console.table para mostrar nombre del artista, oyentes mensuales y nombres de discos.</p>
-</div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L197">ejercicio-2.ts:197</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member"><a id="numerocanciones" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>numero<wbr/>Canciones</span><a href="#numerocanciones" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link"><a id="numerocanciones-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">numeroCanciones</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">disco</span><span class="tsd-signature-symbol">:</span> <a href="ejercicio-2.Disco.html" class="tsd-signature-type tsd-kind-class">Disco</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#numerocanciones-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><a id="numerocanciones-2" class="tsd-anchor"></a><h2 class="tsd-anchor-link">numeroCanciones<a href="#numerocanciones-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Calcula el número de canciones incluidas en un disco concreto.</p>
-</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">disco</span>: <a href="ejercicio-2.Disco.html" class="tsd-signature-type tsd-kind-class">Disco</a></span><div class="tsd-comment tsd-typography"><p>El disco del cual se calculará el número de canciones.</p>
-</div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>Número de canciones en el disco.</p>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L348">ejercicio-2.ts:348</a></li></ul></aside></div></li></ul></section><section class="tsd-panel tsd-member"><a id="reproduccionestotales" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><span>reproducciones<wbr/>Totales</span><a href="#reproduccionestotales" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3><ul class="tsd-signatures"><li class=""><div class="tsd-signature tsd-anchor-link"><a id="reproduccionestotales-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">reproduccionesTotales</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">disco</span><span class="tsd-signature-symbol">:</span> <a href="ejercicio-2.Disco.html" class="tsd-signature-type tsd-kind-class">Disco</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><a href="#reproduccionestotales-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div><div class="tsd-description"><div class="tsd-comment tsd-typography"><a id="reproduccionestotales-2" class="tsd-anchor"></a><h2 class="tsd-anchor-link">reproduccionesTotales<a href="#reproduccionestotales-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Calcula el número total de reproducciones de un disco, sumando las reproducciones de sus canciones.</p>
-</div><div class="tsd-parameters"><h4 class="tsd-parameters-title">Parameters</h4><ul class="tsd-parameter-list"><li><span><span class="tsd-kind-parameter">disco</span>: <a href="ejercicio-2.Disco.html" class="tsd-signature-type tsd-kind-class">Disco</a></span><div class="tsd-comment tsd-typography"><p>El disco del cual se calculará el total de reproducciones.</p>
-</div><div class="tsd-comment tsd-typography"></div></li></ul></div><h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><p>Número total de reproducciones.</p>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/870b07f123dc2c1c1912170048d15c1497aa90d9/src/ejercicio-2.ts#L376">ejercicio-2.ts:376</a></li></ul></aside></div></li></ul></section></section></details></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#bibliotecamusical"><span>Biblioteca<wbr/>Musical</span></a><details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary><div><a href="#constructor" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details><details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary><div><a href="#agregarartista" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>agregar<wbr/>Artista</span></a><ul><li><ul><li><a href="#agregarartista-2"><span>agregar<wbr/>Artista</span></a></li></ul></li></ul><a href="#buscarartista" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>buscar<wbr/>Artista</span></a><ul><li><ul><li><a href="#buscarartista-2"><span>buscar<wbr/>Artista</span></a></li></ul></li></ul><a href="#buscarcancion" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>buscar<wbr/>Cancion</span></a><ul><li><ul><li><a href="#buscarcancion-2"><span>buscar<wbr/>Cancion</span></a></li></ul></li></ul><a href="#buscardisco" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>buscar<wbr/>Disco</span></a><ul><li><ul><li><a href="#buscardisco-2"><span>buscar<wbr/>Disco</span></a></li></ul></li></ul><a href="#duraciontotal" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>duracion<wbr/>Total</span></a><ul><li><ul><li><a href="#duraciontotal-2"><span>duracion<wbr/>Total</span></a></li></ul></li></ul><a href="#mostrarbiblioteca" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mostrar<wbr/>Biblioteca</span></a><ul><li><ul><li><a href="#mostrarbiblioteca-2"><span>mostrar<wbr/>Biblioteca</span></a></li></ul></li></ul><a href="#numerocanciones" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>numero<wbr/>Canciones</span></a><ul><li><ul><li><a href="#numerocanciones-2"><span>numero<wbr/>Canciones</span></a></li></ul></li></ul><a href="#reproduccionestotales" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reproducciones<wbr/>Totales</span></a><ul><li><a href="#reproduccionestotales-2"><span>reproducciones<wbr/>Totales</span></a></li></ul></div></details></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="../modules.html">prct05-objects-classes-interfaces</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
+            </div>
+          </div>
+        </section>
+        <aside class="tsd-sources">
+          <ul>
+            <li>
+              Defined in
+              <a
+                href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L176"
+                >ejercicio-2.ts:176</a
+              >
+            </li>
+          </ul>
+        </aside>
+        <section class="tsd-panel-group tsd-index-group">
+          <section class="tsd-panel tsd-index-panel">
+            <details class="tsd-index-content tsd-accordion" open>
+              <summary class="tsd-accordion-summary tsd-index-summary">
+                <h5
+                  class="tsd-index-heading uppercase"
+                  role="button"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <use href="../assets/icons.svg#icon-chevronSmall"></use>
+                  </svg>
+                  Index
+                </h5>
+              </summary>
+              <div class="tsd-accordion-details">
+                <section class="tsd-index-section">
+                  <h3 class="tsd-index-heading">Constructors</h3>
+                  <div class="tsd-index-list">
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html#constructor"
+                      class="tsd-index-link"
+                      ><svg
+                        class="tsd-kind-icon"
+                        viewBox="0 0 24 24"
+                        aria-label="Constructor"
+                      >
+                        <use href="../assets/icons.svg#icon-512"></use></svg
+                      ><span>constructor</span></a
+                    >
+                  </div>
+                </section>
+                <section class="tsd-index-section">
+                  <h3 class="tsd-index-heading">Methods</h3>
+                  <div class="tsd-index-list">
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html#agregarartista"
+                      class="tsd-index-link"
+                      ><svg
+                        class="tsd-kind-icon"
+                        viewBox="0 0 24 24"
+                        aria-label="Method"
+                      >
+                        <use href="../assets/icons.svg#icon-2048"></use></svg
+                      ><span>agregar<wbr />Artista</span></a
+                    >
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html#buscarartista"
+                      class="tsd-index-link"
+                      ><svg
+                        class="tsd-kind-icon"
+                        viewBox="0 0 24 24"
+                        aria-label="Method"
+                      >
+                        <use href="../assets/icons.svg#icon-2048"></use></svg
+                      ><span>buscar<wbr />Artista</span></a
+                    >
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html#buscarcancion"
+                      class="tsd-index-link"
+                      ><svg
+                        class="tsd-kind-icon"
+                        viewBox="0 0 24 24"
+                        aria-label="Method"
+                      >
+                        <use href="../assets/icons.svg#icon-2048"></use></svg
+                      ><span>buscar<wbr />Cancion</span></a
+                    >
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html#buscardisco"
+                      class="tsd-index-link"
+                      ><svg
+                        class="tsd-kind-icon"
+                        viewBox="0 0 24 24"
+                        aria-label="Method"
+                      >
+                        <use href="../assets/icons.svg#icon-2048"></use></svg
+                      ><span>buscar<wbr />Disco</span></a
+                    >
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html#duraciontotal"
+                      class="tsd-index-link"
+                      ><svg
+                        class="tsd-kind-icon"
+                        viewBox="0 0 24 24"
+                        aria-label="Method"
+                      >
+                        <use href="../assets/icons.svg#icon-2048"></use></svg
+                      ><span>duracion<wbr />Total</span></a
+                    >
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html#mostrarbiblioteca"
+                      class="tsd-index-link"
+                      ><svg
+                        class="tsd-kind-icon"
+                        viewBox="0 0 24 24"
+                        aria-label="Method"
+                      >
+                        <use href="../assets/icons.svg#icon-2048"></use></svg
+                      ><span>mostrar<wbr />Biblioteca</span></a
+                    >
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html#numerocanciones"
+                      class="tsd-index-link"
+                      ><svg
+                        class="tsd-kind-icon"
+                        viewBox="0 0 24 24"
+                        aria-label="Method"
+                      >
+                        <use href="../assets/icons.svg#icon-2048"></use></svg
+                      ><span>numero<wbr />Canciones</span></a
+                    >
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html#reproduccionestotales"
+                      class="tsd-index-link"
+                      ><svg
+                        class="tsd-kind-icon"
+                        viewBox="0 0 24 24"
+                        aria-label="Method"
+                      >
+                        <use href="../assets/icons.svg#icon-2048"></use></svg
+                      ><span>reproducciones<wbr />Totales</span></a
+                    >
+                  </div>
+                </section>
+              </div>
+            </details>
+          </section>
+        </section>
+        <details class="tsd-panel-group tsd-member-group tsd-accordion" open>
+          <summary
+            class="tsd-accordion-summary"
+            data-key="section-Constructors"
+          >
+            <h2>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <use href="../assets/icons.svg#icon-chevronDown"></use>
+              </svg>
+              Constructors
+            </h2>
+          </summary>
+          <section>
+            <section class="tsd-panel tsd-member">
+              <a id="constructor" class="tsd-anchor"></a>
+              <h3 class="tsd-anchor-link">
+                <span>constructor</span
+                ><a
+                  href="#constructor"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h3>
+              <ul class="tsd-signatures">
+                <li class="">
+                  <div class="tsd-signature tsd-anchor-link">
+                    <a id="constructorbibliotecamusical" class="tsd-anchor"></a
+                    ><span class="tsd-signature-keyword">new</span>
+                    <span class="tsd-kind-constructor-signature"
+                      >BibliotecaMusical</span
+                    ><span class="tsd-signature-symbol">()</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <a
+                      href="ejercicio-2.BibliotecaMusical.html"
+                      class="tsd-signature-type tsd-kind-class"
+                      >BibliotecaMusical</a
+                    ><a
+                      href="#constructorbibliotecamusical"
+                      aria-label="Permalink"
+                      class="tsd-anchor-icon"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="../assets/icons.svg#icon-anchor"></use></svg
+                    ></a>
+                  </div>
+                  <div class="tsd-description">
+                    <h4 class="tsd-returns-title">
+                      Returns
+                      <a
+                        href="ejercicio-2.BibliotecaMusical.html"
+                        class="tsd-signature-type tsd-kind-class"
+                        >BibliotecaMusical</a
+                      >
+                    </h4>
+                    <aside class="tsd-sources">
+                      <ul>
+                        <li>
+                          Defined in
+                          <a
+                            href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L179"
+                            >ejercicio-2.ts:179</a
+                          >
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </section>
+        </details>
+        <details class="tsd-panel-group tsd-member-group tsd-accordion" open>
+          <summary class="tsd-accordion-summary" data-key="section-Methods">
+            <h2>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <use href="../assets/icons.svg#icon-chevronDown"></use>
+              </svg>
+              Methods
+            </h2>
+          </summary>
+          <section>
+            <section class="tsd-panel tsd-member">
+              <a id="agregarartista" class="tsd-anchor"></a>
+              <h3 class="tsd-anchor-link">
+                <span>agregar<wbr />Artista</span
+                ><a
+                  href="#agregarartista"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h3>
+              <ul class="tsd-signatures">
+                <li class="">
+                  <div class="tsd-signature tsd-anchor-link">
+                    <a id="agregarartista-1" class="tsd-anchor"></a
+                    ><span class="tsd-kind-call-signature">agregarArtista</span
+                    ><span class="tsd-signature-symbol">(</span
+                    ><span class="tsd-kind-parameter">artista</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <a
+                      href="ejercicio-2.Artista.html"
+                      class="tsd-signature-type tsd-kind-class"
+                      >Artista</a
+                    ><span class="tsd-signature-symbol">)</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <span class="tsd-signature-type">void</span
+                    ><a
+                      href="#agregarartista-1"
+                      aria-label="Permalink"
+                      class="tsd-anchor-icon"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="../assets/icons.svg#icon-anchor"></use></svg
+                    ></a>
+                  </div>
+                  <div class="tsd-description">
+                    <div class="tsd-comment tsd-typography">
+                      <a id="agregarartista-2" class="tsd-anchor"></a>
+                      <h2 class="tsd-anchor-link">
+                        agregarArtista<a
+                          href="#agregarartista-2"
+                          aria-label="Permalink"
+                          class="tsd-anchor-icon"
+                          ><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <use
+                              href="../assets/icons.svg#icon-anchor"
+                            ></use></svg
+                        ></a>
+                      </h2>
+                      <p>Agrega un artista a la biblioteca.</p>
+                    </div>
+                    <div class="tsd-parameters">
+                      <h4 class="tsd-parameters-title">Parameters</h4>
+                      <ul class="tsd-parameter-list">
+                        <li>
+                          <span
+                            ><span class="tsd-kind-parameter">artista</span>:
+                            <a
+                              href="ejercicio-2.Artista.html"
+                              class="tsd-signature-type tsd-kind-class"
+                              >Artista</a
+                            ></span
+                          >
+                          <div class="tsd-comment tsd-typography">
+                            <p>El artista a agregar.</p>
+                          </div>
+                          <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <h4 class="tsd-returns-title">
+                      Returns <span class="tsd-signature-type">void</span>
+                    </h4>
+                    <div class="tsd-comment tsd-typography"></div>
+                    <aside class="tsd-sources">
+                      <ul>
+                        <li>
+                          Defined in
+                          <a
+                            href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L188"
+                            >ejercicio-2.ts:188</a
+                          >
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member">
+              <a id="buscarartista" class="tsd-anchor"></a>
+              <h3 class="tsd-anchor-link">
+                <span>buscar<wbr />Artista</span
+                ><a
+                  href="#buscarartista"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h3>
+              <ul class="tsd-signatures">
+                <li class="">
+                  <div class="tsd-signature tsd-anchor-link">
+                    <a id="buscarartista-1" class="tsd-anchor"></a
+                    ><span class="tsd-kind-call-signature">buscarArtista</span
+                    ><span class="tsd-signature-symbol">(</span
+                    ><span class="tsd-kind-parameter">filtro</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <span class="tsd-signature-type">Partial</span
+                    ><span class="tsd-signature-symbol">&lt;</span
+                    ><a
+                      href="../interfaces/ejercicio-2.IArtista.html"
+                      class="tsd-signature-type tsd-kind-interface"
+                      >IArtista</a
+                    ><span class="tsd-signature-symbol">&gt;</span
+                    ><span class="tsd-signature-symbol">)</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <a
+                      href="ejercicio-2.Artista.html"
+                      class="tsd-signature-type tsd-kind-class"
+                      >Artista</a
+                    ><span class="tsd-signature-symbol">[]</span
+                    ><a
+                      href="#buscarartista-1"
+                      aria-label="Permalink"
+                      class="tsd-anchor-icon"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="../assets/icons.svg#icon-anchor"></use></svg
+                    ></a>
+                  </div>
+                  <div class="tsd-description">
+                    <div class="tsd-comment tsd-typography">
+                      <a id="buscarartista-2" class="tsd-anchor"></a>
+                      <h2 class="tsd-anchor-link">
+                        buscarArtista<a
+                          href="#buscarartista-2"
+                          aria-label="Permalink"
+                          class="tsd-anchor-icon"
+                          ><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <use
+                              href="../assets/icons.svg#icon-anchor"
+                            ></use></svg
+                        ></a>
+                      </h2>
+                      <p>Busca artistas que cumplan con un filtro dado.</p>
+                    </div>
+                    <div class="tsd-parameters">
+                      <h4 class="tsd-parameters-title">Parameters</h4>
+                      <ul class="tsd-parameter-list">
+                        <li>
+                          <span
+                            ><span class="tsd-kind-parameter">filtro</span>:
+                            <span class="tsd-signature-type">Partial</span
+                            ><span class="tsd-signature-symbol">&lt;</span
+                            ><a
+                              href="../interfaces/ejercicio-2.IArtista.html"
+                              class="tsd-signature-type tsd-kind-interface"
+                              >IArtista</a
+                            ><span class="tsd-signature-symbol"
+                              >&gt;</span
+                            ></span
+                          >
+                          <div class="tsd-comment tsd-typography">
+                            <p>
+                              Objeto parcial con propiedades de IArtista para
+                              filtrar.
+                            </p>
+                          </div>
+                          <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <h4 class="tsd-returns-title">
+                      Returns
+                      <a
+                        href="ejercicio-2.Artista.html"
+                        class="tsd-signature-type tsd-kind-class"
+                        >Artista</a
+                      ><span class="tsd-signature-symbol">[]</span>
+                    </h4>
+                    <p>Array de artistas que coinciden con el filtro.</p>
+                    <div class="tsd-comment tsd-typography"></div>
+                    <aside class="tsd-sources">
+                      <ul>
+                        <li>
+                          Defined in
+                          <a
+                            href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L223"
+                            >ejercicio-2.ts:223</a
+                          >
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member">
+              <a id="buscarcancion" class="tsd-anchor"></a>
+              <h3 class="tsd-anchor-link">
+                <span>buscar<wbr />Cancion</span
+                ><a
+                  href="#buscarcancion"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h3>
+              <ul class="tsd-signatures">
+                <li class="">
+                  <div class="tsd-signature tsd-anchor-link">
+                    <a id="buscarcancion-1" class="tsd-anchor"></a
+                    ><span class="tsd-kind-call-signature">buscarCancion</span
+                    ><span class="tsd-signature-symbol">(</span
+                    ><span class="tsd-kind-parameter">filtro</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <span class="tsd-signature-type">Partial</span
+                    ><span class="tsd-signature-symbol">&lt;</span
+                    ><a
+                      href="../interfaces/ejercicio-2.ICancion.html"
+                      class="tsd-signature-type tsd-kind-interface"
+                      >ICancion</a
+                    ><span class="tsd-signature-symbol">&gt;</span
+                    ><span class="tsd-signature-symbol">)</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <a
+                      href="ejercicio-2.Cancion.html"
+                      class="tsd-signature-type tsd-kind-class"
+                      >Cancion</a
+                    ><span class="tsd-signature-symbol">[]</span
+                    ><a
+                      href="#buscarcancion-1"
+                      aria-label="Permalink"
+                      class="tsd-anchor-icon"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="../assets/icons.svg#icon-anchor"></use></svg
+                    ></a>
+                  </div>
+                  <div class="tsd-description">
+                    <div class="tsd-comment tsd-typography">
+                      <a id="buscarcancion-2" class="tsd-anchor"></a>
+                      <h2 class="tsd-anchor-link">
+                        buscarCancion<a
+                          href="#buscarcancion-2"
+                          aria-label="Permalink"
+                          class="tsd-anchor-icon"
+                          ><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <use
+                              href="../assets/icons.svg#icon-anchor"
+                            ></use></svg
+                        ></a>
+                      </h2>
+                      <p>
+                        Busca canciones que cumplan con un filtro dado en toda
+                        la biblioteca.
+                      </p>
+                    </div>
+                    <div class="tsd-parameters">
+                      <h4 class="tsd-parameters-title">Parameters</h4>
+                      <ul class="tsd-parameter-list">
+                        <li>
+                          <span
+                            ><span class="tsd-kind-parameter">filtro</span>:
+                            <span class="tsd-signature-type">Partial</span
+                            ><span class="tsd-signature-symbol">&lt;</span
+                            ><a
+                              href="../interfaces/ejercicio-2.ICancion.html"
+                              class="tsd-signature-type tsd-kind-interface"
+                              >ICancion</a
+                            ><span class="tsd-signature-symbol"
+                              >&gt;</span
+                            ></span
+                          >
+                          <div class="tsd-comment tsd-typography">
+                            <p>
+                              Objeto parcial con propiedades de ICancion para
+                              filtrar.
+                            </p>
+                          </div>
+                          <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <h4 class="tsd-returns-title">
+                      Returns
+                      <a
+                        href="ejercicio-2.Cancion.html"
+                        class="tsd-signature-type tsd-kind-class"
+                        >Cancion</a
+                      ><span class="tsd-signature-symbol">[]</span>
+                    </h4>
+                    <p>Array de canciones que coinciden con el filtro.</p>
+                    <div class="tsd-comment tsd-typography"></div>
+                    <aside class="tsd-sources">
+                      <ul>
+                        <li>
+                          Defined in
+                          <a
+                            href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L296"
+                            >ejercicio-2.ts:296</a
+                          >
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member">
+              <a id="buscardisco" class="tsd-anchor"></a>
+              <h3 class="tsd-anchor-link">
+                <span>buscar<wbr />Disco</span
+                ><a
+                  href="#buscardisco"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h3>
+              <ul class="tsd-signatures">
+                <li class="">
+                  <div class="tsd-signature tsd-anchor-link">
+                    <a id="buscardisco-1" class="tsd-anchor"></a
+                    ><span class="tsd-kind-call-signature">buscarDisco</span
+                    ><span class="tsd-signature-symbol">(</span
+                    ><span class="tsd-kind-parameter">filtro</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <span class="tsd-signature-type">Partial</span
+                    ><span class="tsd-signature-symbol">&lt;</span
+                    ><a
+                      href="../interfaces/ejercicio-2.IDisco.html"
+                      class="tsd-signature-type tsd-kind-interface"
+                      >IDisco</a
+                    ><span class="tsd-signature-symbol">&gt;</span
+                    ><span class="tsd-signature-symbol">)</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <a
+                      href="ejercicio-2.Disco.html"
+                      class="tsd-signature-type tsd-kind-class"
+                      >Disco</a
+                    ><span class="tsd-signature-symbol">[]</span
+                    ><a
+                      href="#buscardisco-1"
+                      aria-label="Permalink"
+                      class="tsd-anchor-icon"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="../assets/icons.svg#icon-anchor"></use></svg
+                    ></a>
+                  </div>
+                  <div class="tsd-description">
+                    <div class="tsd-comment tsd-typography">
+                      <a id="buscardisco-2" class="tsd-anchor"></a>
+                      <h2 class="tsd-anchor-link">
+                        buscarDisco<a
+                          href="#buscardisco-2"
+                          aria-label="Permalink"
+                          class="tsd-anchor-icon"
+                          ><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <use
+                              href="../assets/icons.svg#icon-anchor"
+                            ></use></svg
+                        ></a>
+                      </h2>
+                      <p>
+                        Busca discos que cumplan con un filtro dado en toda la
+                        biblioteca.
+                      </p>
+                    </div>
+                    <div class="tsd-parameters">
+                      <h4 class="tsd-parameters-title">Parameters</h4>
+                      <ul class="tsd-parameter-list">
+                        <li>
+                          <span
+                            ><span class="tsd-kind-parameter">filtro</span>:
+                            <span class="tsd-signature-type">Partial</span
+                            ><span class="tsd-signature-symbol">&lt;</span
+                            ><a
+                              href="../interfaces/ejercicio-2.IDisco.html"
+                              class="tsd-signature-type tsd-kind-interface"
+                              >IDisco</a
+                            ><span class="tsd-signature-symbol"
+                              >&gt;</span
+                            ></span
+                          >
+                          <div class="tsd-comment tsd-typography">
+                            <p>
+                              Objeto parcial con propiedades de IDisco para
+                              filtrar.
+                            </p>
+                          </div>
+                          <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <h4 class="tsd-returns-title">
+                      Returns
+                      <a
+                        href="ejercicio-2.Disco.html"
+                        class="tsd-signature-type tsd-kind-class"
+                        >Disco</a
+                      ><span class="tsd-signature-symbol">[]</span>
+                    </h4>
+                    <p>Array de discos que coinciden con el filtro.</p>
+                    <div class="tsd-comment tsd-typography"></div>
+                    <aside class="tsd-sources">
+                      <ul>
+                        <li>
+                          Defined in
+                          <a
+                            href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L263"
+                            >ejercicio-2.ts:263</a
+                          >
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member">
+              <a id="duraciontotal" class="tsd-anchor"></a>
+              <h3 class="tsd-anchor-link">
+                <span>duracion<wbr />Total</span
+                ><a
+                  href="#duraciontotal"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h3>
+              <ul class="tsd-signatures">
+                <li class="">
+                  <div class="tsd-signature tsd-anchor-link">
+                    <a id="duraciontotal-1" class="tsd-anchor"></a
+                    ><span class="tsd-kind-call-signature">duracionTotal</span
+                    ><span class="tsd-signature-symbol">(</span
+                    ><span class="tsd-kind-parameter">disco</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <a
+                      href="ejercicio-2.Disco.html"
+                      class="tsd-signature-type tsd-kind-class"
+                      >Disco</a
+                    ><span class="tsd-signature-symbol">)</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <span class="tsd-signature-type">number</span
+                    ><a
+                      href="#duraciontotal-1"
+                      aria-label="Permalink"
+                      class="tsd-anchor-icon"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="../assets/icons.svg#icon-anchor"></use></svg
+                    ></a>
+                  </div>
+                  <div class="tsd-description">
+                    <div class="tsd-comment tsd-typography">
+                      <a id="duraciontotal-2" class="tsd-anchor"></a>
+                      <h2 class="tsd-anchor-link">
+                        duracionTotal<a
+                          href="#duraciontotal-2"
+                          aria-label="Permalink"
+                          class="tsd-anchor-icon"
+                          ><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <use
+                              href="../assets/icons.svg#icon-anchor"
+                            ></use></svg
+                        ></a>
+                      </h2>
+                      <p>
+                        Calcula la duración total de un disco, sumando la
+                        duración de cada canción.
+                      </p>
+                    </div>
+                    <div class="tsd-parameters">
+                      <h4 class="tsd-parameters-title">Parameters</h4>
+                      <ul class="tsd-parameter-list">
+                        <li>
+                          <span
+                            ><span class="tsd-kind-parameter">disco</span>:
+                            <a
+                              href="ejercicio-2.Disco.html"
+                              class="tsd-signature-type tsd-kind-class"
+                              >Disco</a
+                            ></span
+                          >
+                          <div class="tsd-comment tsd-typography">
+                            <p>El disco del cual se calculará la duración.</p>
+                          </div>
+                          <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <h4 class="tsd-returns-title">
+                      Returns <span class="tsd-signature-type">number</span>
+                    </h4>
+                    <p>Duración total en segundos.</p>
+                    <div class="tsd-comment tsd-typography"></div>
+                    <aside class="tsd-sources">
+                      <ul>
+                        <li>
+                          Defined in
+                          <a
+                            href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L362"
+                            >ejercicio-2.ts:362</a
+                          >
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member">
+              <a id="mostrarbiblioteca" class="tsd-anchor"></a>
+              <h3 class="tsd-anchor-link">
+                <span>mostrar<wbr />Biblioteca</span
+                ><a
+                  href="#mostrarbiblioteca"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h3>
+              <ul class="tsd-signatures">
+                <li class="">
+                  <div class="tsd-signature tsd-anchor-link">
+                    <a id="mostrarbiblioteca-1" class="tsd-anchor"></a
+                    ><span class="tsd-kind-call-signature"
+                      >mostrarBiblioteca</span
+                    ><span class="tsd-signature-symbol">()</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <span class="tsd-signature-type">void</span
+                    ><a
+                      href="#mostrarbiblioteca-1"
+                      aria-label="Permalink"
+                      class="tsd-anchor-icon"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="../assets/icons.svg#icon-anchor"></use></svg
+                    ></a>
+                  </div>
+                  <div class="tsd-description">
+                    <div class="tsd-comment tsd-typography">
+                      <a id="mostrarbiblioteca-2" class="tsd-anchor"></a>
+                      <h2 class="tsd-anchor-link">
+                        mostrarBiblioteca<a
+                          href="#mostrarbiblioteca-2"
+                          aria-label="Permalink"
+                          class="tsd-anchor-icon"
+                          ><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <use
+                              href="../assets/icons.svg#icon-anchor"
+                            ></use></svg
+                        ></a>
+                      </h2>
+                      <p>
+                        Muestra la información de la biblioteca en formato de
+                        tabla. Utiliza console.table para mostrar nombre del
+                        artista, oyentes mensuales y nombres de discos.
+                      </p>
+                    </div>
+                    <h4 class="tsd-returns-title">
+                      Returns <span class="tsd-signature-type">void</span>
+                    </h4>
+                    <div class="tsd-comment tsd-typography"></div>
+                    <aside class="tsd-sources">
+                      <ul>
+                        <li>
+                          Defined in
+                          <a
+                            href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L197"
+                            >ejercicio-2.ts:197</a
+                          >
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member">
+              <a id="numerocanciones" class="tsd-anchor"></a>
+              <h3 class="tsd-anchor-link">
+                <span>numero<wbr />Canciones</span
+                ><a
+                  href="#numerocanciones"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h3>
+              <ul class="tsd-signatures">
+                <li class="">
+                  <div class="tsd-signature tsd-anchor-link">
+                    <a id="numerocanciones-1" class="tsd-anchor"></a
+                    ><span class="tsd-kind-call-signature">numeroCanciones</span
+                    ><span class="tsd-signature-symbol">(</span
+                    ><span class="tsd-kind-parameter">disco</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <a
+                      href="ejercicio-2.Disco.html"
+                      class="tsd-signature-type tsd-kind-class"
+                      >Disco</a
+                    ><span class="tsd-signature-symbol">)</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <span class="tsd-signature-type">number</span
+                    ><a
+                      href="#numerocanciones-1"
+                      aria-label="Permalink"
+                      class="tsd-anchor-icon"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="../assets/icons.svg#icon-anchor"></use></svg
+                    ></a>
+                  </div>
+                  <div class="tsd-description">
+                    <div class="tsd-comment tsd-typography">
+                      <a id="numerocanciones-2" class="tsd-anchor"></a>
+                      <h2 class="tsd-anchor-link">
+                        numeroCanciones<a
+                          href="#numerocanciones-2"
+                          aria-label="Permalink"
+                          class="tsd-anchor-icon"
+                          ><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <use
+                              href="../assets/icons.svg#icon-anchor"
+                            ></use></svg
+                        ></a>
+                      </h2>
+                      <p>
+                        Calcula el número de canciones incluidas en un disco
+                        concreto.
+                      </p>
+                    </div>
+                    <div class="tsd-parameters">
+                      <h4 class="tsd-parameters-title">Parameters</h4>
+                      <ul class="tsd-parameter-list">
+                        <li>
+                          <span
+                            ><span class="tsd-kind-parameter">disco</span>:
+                            <a
+                              href="ejercicio-2.Disco.html"
+                              class="tsd-signature-type tsd-kind-class"
+                              >Disco</a
+                            ></span
+                          >
+                          <div class="tsd-comment tsd-typography">
+                            <p>
+                              El disco del cual se calculará el número de
+                              canciones.
+                            </p>
+                          </div>
+                          <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <h4 class="tsd-returns-title">
+                      Returns <span class="tsd-signature-type">number</span>
+                    </h4>
+                    <p>Número de canciones en el disco.</p>
+                    <div class="tsd-comment tsd-typography"></div>
+                    <aside class="tsd-sources">
+                      <ul>
+                        <li>
+                          Defined in
+                          <a
+                            href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L348"
+                            >ejercicio-2.ts:348</a
+                          >
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member">
+              <a id="reproduccionestotales" class="tsd-anchor"></a>
+              <h3 class="tsd-anchor-link">
+                <span>reproducciones<wbr />Totales</span
+                ><a
+                  href="#reproduccionestotales"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h3>
+              <ul class="tsd-signatures">
+                <li class="">
+                  <div class="tsd-signature tsd-anchor-link">
+                    <a id="reproduccionestotales-1" class="tsd-anchor"></a
+                    ><span class="tsd-kind-call-signature"
+                      >reproduccionesTotales</span
+                    ><span class="tsd-signature-symbol">(</span
+                    ><span class="tsd-kind-parameter">disco</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <a
+                      href="ejercicio-2.Disco.html"
+                      class="tsd-signature-type tsd-kind-class"
+                      >Disco</a
+                    ><span class="tsd-signature-symbol">)</span
+                    ><span class="tsd-signature-symbol">:</span>
+                    <span class="tsd-signature-type">number</span
+                    ><a
+                      href="#reproduccionestotales-1"
+                      aria-label="Permalink"
+                      class="tsd-anchor-icon"
+                      ><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <use href="../assets/icons.svg#icon-anchor"></use></svg
+                    ></a>
+                  </div>
+                  <div class="tsd-description">
+                    <div class="tsd-comment tsd-typography">
+                      <a id="reproduccionestotales-2" class="tsd-anchor"></a>
+                      <h2 class="tsd-anchor-link">
+                        reproduccionesTotales<a
+                          href="#reproduccionestotales-2"
+                          aria-label="Permalink"
+                          class="tsd-anchor-icon"
+                          ><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <use
+                              href="../assets/icons.svg#icon-anchor"
+                            ></use></svg
+                        ></a>
+                      </h2>
+                      <p>
+                        Calcula el número total de reproducciones de un disco,
+                        sumando las reproducciones de sus canciones.
+                      </p>
+                    </div>
+                    <div class="tsd-parameters">
+                      <h4 class="tsd-parameters-title">Parameters</h4>
+                      <ul class="tsd-parameter-list">
+                        <li>
+                          <span
+                            ><span class="tsd-kind-parameter">disco</span>:
+                            <a
+                              href="ejercicio-2.Disco.html"
+                              class="tsd-signature-type tsd-kind-class"
+                              >Disco</a
+                            ></span
+                          >
+                          <div class="tsd-comment tsd-typography">
+                            <p>
+                              El disco del cual se calculará el total de
+                              reproducciones.
+                            </p>
+                          </div>
+                          <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <h4 class="tsd-returns-title">
+                      Returns <span class="tsd-signature-type">number</span>
+                    </h4>
+                    <p>Número total de reproducciones.</p>
+                    <div class="tsd-comment tsd-typography"></div>
+                    <aside class="tsd-sources">
+                      <ul>
+                        <li>
+                          Defined in
+                          <a
+                            href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/8cf67baacdd5047eb1d354c694662200a0c15dc6/src/ejercicio-2.ts#L376"
+                            >ejercicio-2.ts:376</a
+                          >
+                        </li>
+                      </ul>
+                    </aside>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </section>
+        </details>
+      </div>
+      <div class="col-sidebar">
+        <div class="page-menu">
+          <div class="tsd-navigation settings">
+            <details class="tsd-accordion">
+              <summary class="tsd-accordion-summary">
+                <h3>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <use href="../assets/icons.svg#icon-chevronDown"></use></svg
+                  >Settings
+                </h3>
+              </summary>
+              <div class="tsd-accordion-details">
+                <div class="tsd-filter-visibility">
+                  <span class="settings-label">Member Visibility</span>
+                  <ul id="tsd-filter-options">
+                    <li class="tsd-filter-item">
+                      <label class="tsd-filter-input"
+                        ><input
+                          type="checkbox"
+                          id="tsd-filter-protected"
+                          name="protected"
+                        /><svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          aria-hidden="true"
+                        >
+                          <rect
+                            class="tsd-checkbox-background"
+                            width="30"
+                            height="30"
+                            x="1"
+                            y="1"
+                            rx="6"
+                            fill="none"
+                          ></rect>
+                          <path
+                            class="tsd-checkbox-checkmark"
+                            d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25"
+                            stroke="none"
+                            stroke-width="3.5"
+                            stroke-linejoin="round"
+                            fill="none"
+                          ></path></svg
+                        ><span>Protected</span></label
+                      >
+                    </li>
+                    <li class="tsd-filter-item">
+                      <label class="tsd-filter-input"
+                        ><input
+                          type="checkbox"
+                          id="tsd-filter-inherited"
+                          name="inherited"
+                          checked
+                        /><svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          aria-hidden="true"
+                        >
+                          <rect
+                            class="tsd-checkbox-background"
+                            width="30"
+                            height="30"
+                            x="1"
+                            y="1"
+                            rx="6"
+                            fill="none"
+                          ></rect>
+                          <path
+                            class="tsd-checkbox-checkmark"
+                            d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25"
+                            stroke="none"
+                            stroke-width="3.5"
+                            stroke-linejoin="round"
+                            fill="none"
+                          ></path></svg
+                        ><span>Inherited</span></label
+                      >
+                    </li>
+                    <li class="tsd-filter-item">
+                      <label class="tsd-filter-input"
+                        ><input
+                          type="checkbox"
+                          id="tsd-filter-external"
+                          name="external"
+                        /><svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          aria-hidden="true"
+                        >
+                          <rect
+                            class="tsd-checkbox-background"
+                            width="30"
+                            height="30"
+                            x="1"
+                            y="1"
+                            rx="6"
+                            fill="none"
+                          ></rect>
+                          <path
+                            class="tsd-checkbox-checkmark"
+                            d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25"
+                            stroke="none"
+                            stroke-width="3.5"
+                            stroke-linejoin="round"
+                            fill="none"
+                          ></path></svg
+                        ><span>External</span></label
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="tsd-theme-toggle">
+                  <label class="settings-label" for="tsd-theme">Theme</label
+                  ><select id="tsd-theme">
+                    <option value="os">OS</option>
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                  </select>
+                </div>
+              </div>
+            </details>
+          </div>
+          <details open class="tsd-accordion tsd-page-navigation">
+            <summary class="tsd-accordion-summary">
+              <h3>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <use href="../assets/icons.svg#icon-chevronDown"></use></svg
+                >On This Page
+              </h3>
+            </summary>
+            <div class="tsd-accordion-details">
+              <a href="#bibliotecamusical"
+                ><span>Biblioteca<wbr />Musical</span></a
+              >
+              <details open class="tsd-accordion tsd-page-navigation-section">
+                <summary
+                  class="tsd-accordion-summary"
+                  data-key="section-Constructors"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <use href="../assets/icons.svg#icon-chevronDown"></use></svg
+                  >Constructors
+                </summary>
+                <div>
+                  <a href="#constructor" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Constructor"
+                    >
+                      <use href="../assets/icons.svg#icon-512"></use></svg
+                    ><span>constructor</span></a
+                  >
+                </div>
+              </details>
+              <details open class="tsd-accordion tsd-page-navigation-section">
+                <summary
+                  class="tsd-accordion-summary"
+                  data-key="section-Methods"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <use href="../assets/icons.svg#icon-chevronDown"></use></svg
+                  >Methods
+                </summary>
+                <div>
+                  <a href="#agregarartista" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Method"
+                    >
+                      <use href="../assets/icons.svg#icon-2048"></use></svg
+                    ><span>agregar<wbr />Artista</span></a
+                  >
+                  <ul>
+                    <li>
+                      <ul>
+                        <li>
+                          <a href="#agregarartista-2"
+                            ><span>agregar<wbr />Artista</span></a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a href="#buscarartista" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Method"
+                    >
+                      <use href="../assets/icons.svg#icon-2048"></use></svg
+                    ><span>buscar<wbr />Artista</span></a
+                  >
+                  <ul>
+                    <li>
+                      <ul>
+                        <li>
+                          <a href="#buscarartista-2"
+                            ><span>buscar<wbr />Artista</span></a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a href="#buscarcancion" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Method"
+                    >
+                      <use href="../assets/icons.svg#icon-2048"></use></svg
+                    ><span>buscar<wbr />Cancion</span></a
+                  >
+                  <ul>
+                    <li>
+                      <ul>
+                        <li>
+                          <a href="#buscarcancion-2"
+                            ><span>buscar<wbr />Cancion</span></a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a href="#buscardisco" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Method"
+                    >
+                      <use href="../assets/icons.svg#icon-2048"></use></svg
+                    ><span>buscar<wbr />Disco</span></a
+                  >
+                  <ul>
+                    <li>
+                      <ul>
+                        <li>
+                          <a href="#buscardisco-2"
+                            ><span>buscar<wbr />Disco</span></a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a href="#duraciontotal" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Method"
+                    >
+                      <use href="../assets/icons.svg#icon-2048"></use></svg
+                    ><span>duracion<wbr />Total</span></a
+                  >
+                  <ul>
+                    <li>
+                      <ul>
+                        <li>
+                          <a href="#duraciontotal-2"
+                            ><span>duracion<wbr />Total</span></a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a href="#mostrarbiblioteca" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Method"
+                    >
+                      <use href="../assets/icons.svg#icon-2048"></use></svg
+                    ><span>mostrar<wbr />Biblioteca</span></a
+                  >
+                  <ul>
+                    <li>
+                      <ul>
+                        <li>
+                          <a href="#mostrarbiblioteca-2"
+                            ><span>mostrar<wbr />Biblioteca</span></a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a href="#numerocanciones" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Method"
+                    >
+                      <use href="../assets/icons.svg#icon-2048"></use></svg
+                    ><span>numero<wbr />Canciones</span></a
+                  >
+                  <ul>
+                    <li>
+                      <ul>
+                        <li>
+                          <a href="#numerocanciones-2"
+                            ><span>numero<wbr />Canciones</span></a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <a href="#reproduccionestotales" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Method"
+                    >
+                      <use href="../assets/icons.svg#icon-2048"></use></svg
+                    ><span>reproducciones<wbr />Totales</span></a
+                  >
+                  <ul>
+                    <li>
+                      <a href="#reproduccionestotales-2"
+                        ><span>reproducciones<wbr />Totales</span></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </details>
+        </div>
+        <div class="site-menu">
+          <nav class="tsd-navigation">
+            <a href="../modules.html">prct05-objects-classes-interfaces</a>
+            <ul class="tsd-small-nested-navigation" id="tsd-nav-container">
+              <li>Loading...</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p class="tsd-generator">
+        Generated using
+        <a href="https://typedoc.org/" target="_blank">TypeDoc</a>
+      </p>
+    </footer>
+    <div class="overlay"></div>
+  </body>
+</html>
