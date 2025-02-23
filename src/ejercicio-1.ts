@@ -1,4 +1,5 @@
 /**
+ * @module ejercicio-1
  * # Ejercicio 1: Combates Pokemon
  * Estructura de clases, interfaces y funciones para simular combates entre
  * Pokémon y buscarlos en una Pokedex. Se usa un sistema de tipos y efectividades

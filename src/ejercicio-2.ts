@@ -1,4 +1,5 @@
 /**
+ * @module ejercicio-2
  * # Ejercicio 2: Biblioteca Musical
  * Conjunto de clases e interfaces para almacenar información sobre artistas,
  * discos y canciones. Incluye una clase `BibliotecaMusical` para gestionar la

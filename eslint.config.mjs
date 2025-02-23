@@ -40,6 +40,7 @@ export default [
       "package-lock.json",
       "package.json",
       "tsconfig.json",
+      "tsdoc.json",
       "typedoc.json",
       ".vscode/**",
       ".github/workflows/**",
