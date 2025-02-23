@@ -6,6 +6,41 @@
  * interfaces `ICancion`, `IDisco` e `IArtista` respectivamente. La clase
  * `BibliotecaMusical` permite agregar artistas, buscar información y calcular
  * datos de discos.
+ *
+ * - **Single Responsibility Principle (SRP):**
+ *   Cada clase tiene una única responsabilidad:
+ *     - `Cancion` se encarga de representar la información de una canción.
+ *     - `Disco` encapsula la información de un álbum y sus canciones.
+ *     - `Artista` almacena la información de un artista y su discografía.
+ *     - `BibliotecaMusical` gestiona el almacenamiento, búsqueda y cálculo de datos de la biblioteca.
+ *
+ * - **Open/Closed Principle (OCP):**
+ *   Las clases están abiertas a extensión sin modificar su comportamiento existente.
+ *   Por ejemplo, se pueden añadir nuevos filtros de búsqueda o nuevas operaciones sobre discos
+ *   sin alterar las clases actuales.
+ *
+ * - **Liskov Substitution Principle (LSP):**
+ *   Cada clase que implementa una interfaz (por ejemplo, `Cancion` implementa `ICancion`)
+ *   puede ser usada en lugar de la interfaz sin afectar el comportamiento del sistema.
+ *
+ * - **Interface Segregation Principle (ISP):**
+ *   Se han definido interfaces específicas (`ICancion`, `IDisco` e `IArtista`) para que los consumidores
+ *   de estos datos dependan únicamente de lo que necesitan, evitando depender de métodos o propiedades no utilizados.
+ *
+ * - **Dependency Inversion Principle (DIP):**
+ *   Las clases de alto nivel, como `BibliotecaMusical`, dependen de abstracciones (interfaces) en lugar de
+ *   implementaciones concretas, lo que facilita modificar la forma en que se representan los datos sin afectar la lógica de la biblioteca.
+ *
+ * @example
+ * ```ts
+ * const cancion = new Cancion("Canción1", 210, ["Pop", "Rock"], true, 15000);
+ * const disco = new Disco("Álbum1", 2020, [cancion]);
+ * const artista = new Artista("Artista1", 50000, [disco]);
+ * const biblioteca = new BibliotecaMusical();
+ * biblioteca.agregarArtista(artista);
+ * biblioteca.mostrarBiblioteca();
+ * const resultados = biblioteca.buscarCancion({ nombre: "Canción1" });
+ * ```
  */
 
 /**

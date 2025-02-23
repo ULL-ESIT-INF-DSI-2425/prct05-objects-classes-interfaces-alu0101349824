@@ -12,7 +12,6 @@ eslint.config.mjs
 custom-styles.css
 package-lock.json
 package.json
-README.md
 tsconfig.json
 typedoc.json
 .vscode
