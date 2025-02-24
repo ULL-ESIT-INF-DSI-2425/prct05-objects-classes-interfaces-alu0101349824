@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <title>obtenerEfectividad | prct05-objects-classes-interfaces</title>
+    <title>mod-1 | prct05-objects-classes-interfaces</title>
     <meta
       name="description"
       content="Documentation for prct05-objects-classes-interfaces"
@@ -84,119 +84,136 @@
             <li>
               <a href="../modules.html">prct05-objects-classes-interfaces</a>
             </li>
-            <li><a href="../modules/ejercicio-1.html">ejercicio-1</a></li>
-            <li>
-              <a href="ejercicio-1.obtenerEfectividad.html"
-                >obtenerEfectividad</a
-              >
-            </li>
+            <li><a href="mod-1.html">mod-1</a></li>
           </ul>
-          <h1>Function obtenerEfectividad</h1>
+          <h1>Module mod-1</h1>
         </div>
-        <section class="tsd-panel">
-          <ul class="tsd-signatures">
-            <li class="">
-              <div class="tsd-signature tsd-anchor-link">
-                <a id="obtenerefectividad" class="tsd-anchor"></a
-                ><span class="tsd-kind-call-signature">obtenerEfectividad</span
-                ><span class="tsd-signature-symbol">(</span
-                ><span class="tsd-kind-parameter">tipoAtacante</span
-                ><span class="tsd-signature-symbol">:</span>
-                <a
-                  href="../enums/ejercicio-1.TipoPokemon.html"
-                  class="tsd-signature-type tsd-kind-enum"
-                  >TipoPokemon</a
-                ><span class="tsd-signature-symbol">,</span>
-                <span class="tsd-kind-parameter">tipoDefensor</span
-                ><span class="tsd-signature-symbol">:</span>
-                <a
-                  href="../enums/ejercicio-1.TipoPokemon.html"
-                  class="tsd-signature-type tsd-kind-enum"
-                  >TipoPokemon</a
-                ><span class="tsd-signature-symbol">)</span
-                ><span class="tsd-signature-symbol">:</span>
-                <span class="tsd-signature-type">number</span
-                ><a
-                  href="#obtenerefectividad"
+        <section class="tsd-panel tsd-comment">
+          <div class="tsd-comment tsd-typography">
+            <div class="tsd-tag-remarks">
+              <h4 class="tsd-anchor-link">
+                <a id="remarks" class="tsd-anchor"></a>Remarks<a
+                  href="#remarks"
                   aria-label="Permalink"
                   class="tsd-anchor-icon"
                   ><svg viewBox="0 0 24 24" aria-hidden="true">
                     <use href="../assets/icons.svg#icon-anchor"></use></svg
                 ></a>
-              </div>
-              <div class="tsd-description">
-                <div class="tsd-comment tsd-typography">
-                  <a id="obtenerefectividad-1" class="tsd-anchor"></a>
-                  <h2 class="tsd-anchor-link">
-                    obtenerEfectividad<a
-                      href="#obtenerefectividad-1"
-                      aria-label="Permalink"
-                      class="tsd-anchor-icon"
-                      ><svg viewBox="0 0 24 24" aria-hidden="true">
-                        <use href="../assets/icons.svg#icon-anchor"></use></svg
-                    ></a>
-                  </h2>
-                  <p>
-                    Calcula la efectividad del ataque basado en los tipos del
-                    atacante y del defensor.
-                  </p>
-                </div>
-                <div class="tsd-parameters">
-                  <h4 class="tsd-parameters-title">Parameters</h4>
-                  <ul class="tsd-parameter-list">
-                    <li>
-                      <span
-                        ><span class="tsd-kind-parameter">tipoAtacante</span>:
-                        <a
-                          href="../enums/ejercicio-1.TipoPokemon.html"
-                          class="tsd-signature-type tsd-kind-enum"
-                          >TipoPokemon</a
-                        ></span
-                      >
-                      <div class="tsd-comment tsd-typography">
-                        <p>Tipo del Pokémon atacante.</p>
-                      </div>
-                      <div class="tsd-comment tsd-typography"></div>
-                    </li>
-                    <li>
-                      <span
-                        ><span class="tsd-kind-parameter">tipoDefensor</span>:
-                        <a
-                          href="../enums/ejercicio-1.TipoPokemon.html"
-                          class="tsd-signature-type tsd-kind-enum"
-                          >TipoPokemon</a
-                        ></span
-                      >
-                      <div class="tsd-comment tsd-typography">
-                        <p>Tipo del Pokémon defensor.</p>
-                      </div>
-                      <div class="tsd-comment tsd-typography"></div>
-                    </li>
-                  </ul>
-                </div>
-                <h4 class="tsd-returns-title">
-                  Returns <span class="tsd-signature-type">number</span>
-                </h4>
-                <p>
-                  Un número representando la efectividad: 2 (efectivo), 1
-                  (neutral), 0.5 (no efectivo).
-                </p>
-                <div class="tsd-comment tsd-typography"></div>
-                <aside class="tsd-sources">
-                  <ul>
-                    <li>
-                      Defined in
-                      <a
-                        href="https://github.com/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-alu0101349824/blob/635c090b726078a4ef61fc5ef89ba4daab7046c7/src/ejercicio-1.ts#L315"
-                        >ejercicio-1.ts:315</a
-                      >
-                    </li>
-                  </ul>
-                </aside>
-              </div>
-            </li>
-          </ul>
+              </h4>
+              <p>Este código define un conjunto de clases para modelar:</p>
+              <ul>
+                <li>Una clase abstracta <code>Persona</code>.</li>
+                <li>
+                  Clases <code>Estudiante</code> y <code>Profesor</code> que
+                  heredan de <code>Persona</code>.
+                </li>
+                <li>
+                  Una clase <code>Asignatura</code> que gestiona profesores,
+                  estudiantes y calificaciones.
+                </li>
+              </ul>
+              <p>
+                Se respeta la encapsulación a través de propiedades privadas con
+                getters y setters, y se proporciona un método abstracto para
+                mostrar los datos personales en la clase <code>Persona</code>.
+              </p>
+            </div>
+          </div>
         </section>
+        <details class="tsd-panel-group tsd-member-group tsd-accordion" open>
+          <summary class="tsd-accordion-summary" data-key="section-Classes">
+            <h2>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <use href="../assets/icons.svg#icon-chevronDown"></use>
+              </svg>
+              Classes
+            </h2>
+          </summary>
+          <dl class="tsd-member-summaries">
+            <dt class="tsd-member-summary">
+              <a id="asignatura" class="tsd-anchor"></a
+              ><span class="tsd-member-summary-name"
+                ><svg
+                  class="tsd-kind-icon"
+                  viewBox="0 0 24 24"
+                  aria-label="Class"
+                >
+                  <use href="../assets/icons.svg#icon-128"></use></svg
+                ><a href="../classes/mod-1.Asignatura.html">Asignatura</a
+                ><a
+                  href="#asignatura"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg></a
+              ></span>
+            </dt>
+            <dd class="tsd-member-summary"></dd>
+            <dt class="tsd-member-summary">
+              <a id="estudiante" class="tsd-anchor"></a
+              ><span class="tsd-member-summary-name"
+                ><svg
+                  class="tsd-kind-icon"
+                  viewBox="0 0 24 24"
+                  aria-label="Class"
+                >
+                  <use href="../assets/icons.svg#icon-128"></use></svg
+                ><a href="../classes/mod-1.Estudiante.html">Estudiante</a
+                ><a
+                  href="#estudiante"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg></a
+              ></span>
+            </dt>
+            <dd class="tsd-member-summary"></dd>
+            <dt class="tsd-member-summary">
+              <a id="persona" class="tsd-anchor"></a
+              ><span class="tsd-member-summary-name"
+                ><svg
+                  class="tsd-kind-icon"
+                  viewBox="0 0 24 24"
+                  aria-label="Class"
+                >
+                  <use href="../assets/icons.svg#icon-128"></use></svg
+                ><a href="../classes/mod-1.Persona.html">Persona</a
+                ><a
+                  href="#persona"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg></a
+              ></span>
+            </dt>
+            <dd class="tsd-member-summary"></dd>
+            <dt class="tsd-member-summary">
+              <a id="profesor" class="tsd-anchor"></a
+              ><span class="tsd-member-summary-name"
+                ><svg
+                  class="tsd-kind-icon"
+                  viewBox="0 0 24 24"
+                  aria-label="Class"
+                >
+                  <use href="../assets/icons.svg#icon-128"></use></svg
+                ><a href="../classes/mod-1.Profesor.html">Profesor</a
+                ><a
+                  href="#profesor"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg></a
+              ></span>
+            </dt>
+            <dd class="tsd-member-summary"></dd>
+          </dl>
+        </details>
       </div>
       <div class="col-sidebar">
         <div class="page-menu">
@@ -344,9 +361,57 @@
               </h3>
             </summary>
             <div class="tsd-accordion-details">
-              <a href="#obtenerefectividad-1"
-                ><span>obtener<wbr />Efectividad</span></a
-              >
+              <details open class="tsd-accordion tsd-page-navigation-section">
+                <summary
+                  class="tsd-accordion-summary"
+                  data-key="section-Classes"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <use href="../assets/icons.svg#icon-chevronDown"></use></svg
+                  >Classes
+                </summary>
+                <div>
+                  <a href="#asignatura" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Class"
+                    >
+                      <use href="../assets/icons.svg#icon-128"></use></svg
+                    ><span>Asignatura</span></a
+                  ><a href="#estudiante" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Class"
+                    >
+                      <use href="../assets/icons.svg#icon-128"></use></svg
+                    ><span>Estudiante</span></a
+                  ><a href="#persona" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Class"
+                    >
+                      <use href="../assets/icons.svg#icon-128"></use></svg
+                    ><span>Persona</span></a
+                  ><a href="#profesor" class=""
+                    ><svg
+                      class="tsd-kind-icon"
+                      viewBox="0 0 24 24"
+                      aria-label="Class"
+                    >
+                      <use href="../assets/icons.svg#icon-128"></use></svg
+                    ><span>Profesor</span></a
+                  >
+                </div>
+              </details>
             </div>
           </details>
         </div>
