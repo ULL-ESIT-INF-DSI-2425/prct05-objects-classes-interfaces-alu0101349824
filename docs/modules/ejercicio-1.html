@@ -90,6 +90,92 @@
         </div>
         <section class="tsd-panel tsd-comment">
           <div class="tsd-comment tsd-typography">
+            <div class="tsd-tag-remarks">
+              <h4 class="tsd-anchor-link">
+                <a id="remarks" class="tsd-anchor"></a>Remarks<a
+                  href="#remarks"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h4>
+              <p>
+                Estructura de clases, interfaces y funciones para simular
+                combates entre Pokémon y buscarlos en una Pokedex. Se usa un
+                sistema de tipos y efectividades para calcular el daño de los
+                ataques. También se incluye una clase para simular combates
+                entre Pokémon y una clase para almacenar y buscar Pokémon en una
+                Pokedex.
+              </p>
+              <p>
+                Este diseño sigue los principios SOLID de la siguiente manera:
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>Single Responsibility Principle (SRP):</strong> Cada
+                    clase tiene una única responsabilidad:
+                  </p>
+                  <ul>
+                    <li>
+                      La clase <code>Pokemon</code> representa únicamente los
+                      datos de un Pokémon.
+                    </li>
+                    <li>
+                      La clase <code>Pokedex</code> se encarga de almacenar y
+                      buscar Pokémon.
+                    </li>
+                    <li>
+                      La clase <code>Combat</code> simula el combate entre dos
+                      Pokémon.
+                    </li>
+                    <li>
+                      La función <code>obtenerEfectividad</code> calcula la
+                      efectividad del ataque según los tipos.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>
+                    <strong>Open/Closed Principle (OCP):</strong> El código está
+                    abierto a la extensión sin modificar su comportamiento
+                    existente. Por ejemplo, se pueden añadir nuevos tipos de
+                    Pokémon o ampliar los criterios de búsqueda (nuevos filtros)
+                    sin alterar las clases ya implementadas.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Liskov Substitution Principle (LSP):</strong> La
+                    clase <code>Pokemon</code> implementa la interfaz
+                    <code>IPokemon</code>, por lo que cualquier instancia de
+                    <code>Pokemon</code> puede ser utilizada donde se espere un
+                    <code>IPokemon</code>, garantizando la sustitución sin
+                    errores.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Interface Segregation Principle (ISP):</strong> Se
+                    definen interfaces específicas como <code>IPokemon</code> y
+                    <code>FiltroPokemon</code> que exponen solo las propiedades
+                    necesarias, evitando que las clases dependan de atributos o
+                    métodos no utilizados.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Dependency Inversion Principle (DIP):</strong> Las
+                    clases de alto nivel, como <code>Pokedex</code>, dependen de
+                    abstracciones (las interfaces) y no de implementaciones
+                    concretas. Esto permite modificar la forma en que se
+                    representan los Pokémon sin afectar la lógica de búsqueda o
+                    almacenamiento.
+                  </p>
+                </li>
+              </ul>
+            </div>
             <div class="tsd-tag-example">
               <h4 class="tsd-anchor-link">
                 <a id="example" class="tsd-anchor"></a>Example<a

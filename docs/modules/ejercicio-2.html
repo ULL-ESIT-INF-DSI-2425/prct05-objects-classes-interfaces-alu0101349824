@@ -90,6 +90,92 @@
         </div>
         <section class="tsd-panel tsd-comment">
           <div class="tsd-comment tsd-typography">
+            <div class="tsd-tag-remarks">
+              <h4 class="tsd-anchor-link">
+                <a id="remarks" class="tsd-anchor"></a>Remarks<a
+                  href="#remarks"
+                  aria-label="Permalink"
+                  class="tsd-anchor-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <use href="../assets/icons.svg#icon-anchor"></use></svg
+                ></a>
+              </h4>
+              <p>
+                Conjunto de clases e interfaces para almacenar información sobre
+                artistas, discos y canciones. Incluye una clase
+                <code>BibliotecaMusical</code> para gestionar la información.
+                Las clases <code>Cancion</code>, <code>Disco</code> y
+                <code>Artista</code> implementan las interfaces
+                <code>ICancion</code>, <code>IDisco</code> e
+                <code>IArtista</code> respectivamente. La clase
+                <code>BibliotecaMusical</code> permite agregar artistas, buscar
+                información y calcular datos de discos.
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <strong>Single Responsibility Principle (SRP):</strong> Cada
+                    clase tiene una única responsabilidad:
+                  </p>
+                  <ul>
+                    <li>
+                      <code>Cancion</code> se encarga de representar la
+                      información de una canción.
+                    </li>
+                    <li>
+                      <code>Disco</code> encapsula la información de un álbum y
+                      sus canciones.
+                    </li>
+                    <li>
+                      <code>Artista</code> almacena la información de un artista
+                      y su discografía.
+                    </li>
+                    <li>
+                      <code>BibliotecaMusical</code> gestiona el almacenamiento,
+                      búsqueda y cálculo de datos de la biblioteca.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>
+                    <strong>Open/Closed Principle (OCP):</strong> Las clases
+                    están abiertas a extensión sin modificar su comportamiento
+                    existente. Por ejemplo, se pueden añadir nuevos filtros de
+                    búsqueda o nuevas operaciones sobre discos sin alterar las
+                    clases actuales.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Liskov Substitution Principle (LSP):</strong> Cada
+                    clase que implementa una interfaz (por ejemplo,
+                    <code>Cancion</code> implementa <code>ICancion</code>) puede
+                    ser usada en lugar de la interfaz sin afectar el
+                    comportamiento del sistema.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Interface Segregation Principle (ISP):</strong> Se
+                    han definido interfaces específicas (<code>ICancion</code>,
+                    <code>IDisco</code> e <code>IArtista</code>) para que los
+                    consumidores de estos datos dependan únicamente de lo que
+                    necesitan, evitando depender de métodos o propiedades no
+                    utilizados.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <strong>Dependency Inversion Principle (DIP):</strong> Las
+                    clases de alto nivel, como <code>BibliotecaMusical</code>,
+                    dependen de abstracciones (interfaces) en lugar de
+                    implementaciones concretas, lo que facilita modificar la
+                    forma en que se representan los datos sin afectar la lógica
+                    de la biblioteca.
+                  </p>
+                </li>
+              </ul>
+            </div>
             <div class="tsd-tag-example">
               <h4 class="tsd-anchor-link">
                 <a id="example" class="tsd-anchor"></a>Example<a

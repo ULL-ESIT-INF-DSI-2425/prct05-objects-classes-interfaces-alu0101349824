@@ -1,7 +1,7 @@
 /**
  * @module ejercicio-1
  * # Ejercicio 1: Combates Pokemon
- * Estructura de clases, interfaces y funciones para simular combates entre
+ * @remarks Estructura de clases, interfaces y funciones para simular combates entre
  * Pokémon y buscarlos en una Pokedex. Se usa un sistema de tipos y efectividades
  * para calcular el daño de los ataques. También se incluye una clase para simular
  * combates entre Pokémon y una clase para almacenar y buscar Pokémon en una Pokedex.
@@ -17,8 +17,8 @@
  *
  * - **Open/Closed Principle (OCP):**
  *   El código está abierto a la extensión sin modificar su comportamiento existente.
- *   Por ejemplo, se pueden añadir nuevos tipos de Pokémon o ampliar los criterios de búsqueda
- *   (nuevos filtros) sin alterar las clases ya implementadas.
+ *   Por ejemplo, se pueden añadir nuevos tipos de Pokémon o ampliar los criterios de
+ *   búsqueda (nuevos filtros) sin alterar las clases ya implementadas.
  *
  * - **Liskov Substitution Principle (LSP):**
  *   La clase `Pokemon` implementa la interfaz `IPokemon`, por lo que cualquier instancia
